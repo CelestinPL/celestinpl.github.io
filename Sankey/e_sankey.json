@@ -1,1 +1,49 @@
-
+{
+  "id": "com.sap.sac.echarts.sankey",
+  "version": "1.0.0",
+  "name": "EChartsSankey",
+  "description": "A Sankey Chart Custom Widget Project",
+  "newInstancePrefix": "EChartsSankey",
+  "vendor": "SAP",
+  "eula": "",
+  "license": "",
+  "supportsMobile": true,
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-sap-sac-echarts-sankey-1",
+      "url": "https://celestinpl.github.io/Sankey/e_sankey.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {
+    "width": {
+      "type": "integer",
+      "default": 600
+    },
+    "height": {
+      "type": "integer",
+      "default": 320
+    }
+  },
+  "events": {},
+  "methods": {},
+  "types": {},
+  "dataBindings": {
+    "dataBinding": {
+      "feeds": [
+        {
+          "id": "dimensions",
+          "description": "Dimensions",
+          "type": "dimension"
+        },
+        {
+          "id": "measures",
+          "description": "Measures",
+          "type": "mainStructureMember"
+        }
+      ]
+    }
+  }
+}
