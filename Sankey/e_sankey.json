@@ -20,11 +20,11 @@
   "properties": {
     "width": {
       "type": "integer",
-      "default": 600
+      "default": 1200
     },
     "height": {
       "type": "integer",
-      "default": 320
+      "default": 800
     }
   },
   "events": {},
