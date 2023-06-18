@@ -143,5 +143,5 @@ import * as echarts from 'echarts'
     }
   }
 
-  customElements.define('com-sap-sac-echarts-sankey-1', SankeyMain);
+  customElements.define('com-sap-sac-echarts-sankey', SankeyMain);
 })();
