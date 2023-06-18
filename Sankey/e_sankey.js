@@ -102,12 +102,12 @@ import * as echarts from 'echarts'
   
   class SankeyMain extends HTMLElement {
     constructor () {
-    super();
+      super();
 
-    this._shadowRoot = this.attachShadow({ mode: 'open' });
-    this._shadowRoot.appendChild(template.content.cloneNode(true));
-    this._root = this._shadowRoot.getElementById('root');
-    this._renderer = new Renderer(this._root);
+      this._shadowRoot = this.attachShadow({ mode: 'open' });
+      this._shadowRoot.appendChild(template.content.cloneNode(true));
+      this._root = this._shadowRoot.getElementById('root');
+      this._renderer = new Renderer(this._root);
     }
 
     // ------------------
@@ -143,5 +143,5 @@ import * as echarts from 'echarts'
     }
   }
 
-  customElements.define('com-sap-sac-echarts-sankey', SankeyMain);
-}
+  customElements.define('com-sap-sac-echarts-sankey-1', SankeyMain);
+})();
