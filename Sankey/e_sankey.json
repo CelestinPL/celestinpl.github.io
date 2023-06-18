@@ -11,7 +11,7 @@
   "webcomponents": [
     {
       "kind": "main",
-      "tag": "com-sap-sac-echarts-sankey-1",
+      "tag": "com-sap-sac-echarts-sankey",
       "url": "https://celestinpl.github.io/Sankey/e_sankey.js",
       "integrity": "",
       "ignoreIntegrity": true
