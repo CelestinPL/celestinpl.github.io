@@ -57,14 +57,17 @@ var getScriptPromisify = (src) => {
       const links = []
 
       data.forEach(d => {
-        const { parentLabel, parentId } = d[source.key]
+        const parentLabel = d[source.key]['label']
+        const parentId = d[source.key]['id']
         const { label, id } = d[target.key]
         const { raw } = d[measure.key]
-        if (!nodes.includes({ name: label })) { 
+        const nIndex = nodes.findIndex(object => object.name === label)
+        if (nIndex === -1) { 
           nodes.push({ name: label }) 
         }
 
-        if (!nodes.includes({ name: parentLabel })) { 
+        const pIndex = nodes.findIndex(object => object.name === parentLabel)
+        if (pIndex === -1) { 
           nodes.push({ name: parentLabel }) 
         }
         links.push({
