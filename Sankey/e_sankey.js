@@ -1,11 +1,8 @@
-import * as echarts from 'https://fastly.jsdelivr.net/npm/echarts@5/dist/echarts.min.js'
-
 var getScriptPromisify = (src) => {
   // Workaround with conflict between geo widget and echarts.
   
   return new Promise(resolve => {
-      $.getScript(src, () => {
-      
+    $.getScript(src, () => {
       resolve()
     })
   })
@@ -139,7 +136,9 @@ var getScriptPromisify = (src) => {
       this.dispose();
     }
 
-    render () {
+    async render () {
+      await getScriptPromisify('https://fastly.jsdelivr.net/npm/echarts@5/dist/echarts.min.js')
+      
       if (!document.contains(this)) {
         // Delay the render to assure the custom widget is appended on dom
         setTimeout(this.render.bind(this), 0);
