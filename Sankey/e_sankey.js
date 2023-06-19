@@ -49,30 +49,29 @@ var getScriptPromisify = (src) => {
       if (dataBinding.state !== 'success') { return }
 
       let { data, metadata } = dataBinding
-      const { dimensions, measures } = parseMetadata(metadata)
+      const { dimensions, measures } = this.parseMetadata(metadata)
 
-      const [dimension] = dimensions
+      const [source, target] = dimensions
       const [measure] = measures
       const nodes = []
       const links = []
 
       data.forEach(d => {
-        const { label, id, parentId } = d[dimension.key]
+        const { parentLabel, parentId } = d[source.key]
+        const { label, id } = d[target.key]
         const { raw } = d[measure.key]
-        nodes.push({ name: label })
-
-        const dParent = data.find(d => {
-          const { id } = d[dimension.key]
-          return id === parentId
-        })
-        if (dParent) {
-          const { label: labelParent } = dParent[dimension.key]
-          links.push({
-            source: labelParent,
-            target: label,
-            value: raw
-          })
+        if (!nodes.includes({ name: label })) { 
+          nodes.push({ name: label }) 
         }
+
+        if (!nodes.includes({ name: parentLabel })) { 
+          nodes.push({ name: parentLabel }) 
+        }
+        links.push({
+          source: parentLabel,
+          target: label,
+          value: raw
+        })
       })
       
       this._echart = echarts.init(this._root)
