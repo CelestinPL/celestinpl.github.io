@@ -1,5 +1,3 @@
-//import * as echarts from 'echarts'
-
 (function() {
   const template = document.createElement('template');
   template.innerHTML = `
@@ -35,7 +33,18 @@
       return { dimensions, measures, dimensionsMap, measuresMap }
     }
     
-    render (dataBinding) {
+    var getScriptPromisify = (src) => {
+      // Workaround with conflict between geo widget and echarts.
+      
+      return new Promise(resolve => {
+          $.getScript(src, () => {
+          
+          resolve()
+        })
+      })
+    }
+    
+    async render (dataBinding) {
       this.dispose()
 
       if (dataBinding.state !== 'success') { return }
@@ -66,6 +75,8 @@
           })
         }
       })
+      
+      await getScriptPromisify('https://fastly.jsdelivr.net/npm/echarts@5/dist/echarts.min.js')
       
       this._echart = echarts.init(this._root)
       this._echart.setOption({
