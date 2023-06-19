@@ -1,3 +1,14 @@
+var getScriptPromisify = (src) => {
+  // Workaround with conflict between geo widget and echarts.
+  
+  return new Promise(resolve => {
+      $.getScript(src, () => {
+      
+      resolve()
+    })
+  })
+}
+
 (function() {
   const template = document.createElement('template');
   template.innerHTML = `
@@ -31,17 +42,6 @@
         measures.push({ key, ...measure })
       }
       return { dimensions, measures, dimensionsMap, measuresMap }
-    }
-    
-    var getScriptPromisify = (src) => {
-      // Workaround with conflict between geo widget and echarts.
-      
-      return new Promise(resolve => {
-          $.getScript(src, () => {
-          
-          resolve()
-        })
-      })
     }
     
     async render (dataBinding) {
