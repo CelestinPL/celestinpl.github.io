@@ -1,3 +1,5 @@
+import * as echarts from 'https://fastly.jsdelivr.net/npm/echarts@5/dist/echarts.min.js'
+
 var getScriptPromisify = (src) => {
   // Workaround with conflict between geo widget and echarts.
   
@@ -44,7 +46,7 @@ var getScriptPromisify = (src) => {
       return { dimensions, measures, dimensionsMap, measuresMap }
     }
     
-    async render (dataBinding) {
+    render (dataBinding) {
       this.dispose()
 
       if (dataBinding.state !== 'success') { return }
@@ -75,8 +77,6 @@ var getScriptPromisify = (src) => {
           })
         }
       })
-      
-      await getScriptPromisify('https://fastly.jsdelivr.net/npm/echarts@5/dist/echarts.min.js')
       
       this._echart = echarts.init(this._root)
       this._echart.setOption({
