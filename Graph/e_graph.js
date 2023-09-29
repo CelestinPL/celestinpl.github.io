@@ -133,7 +133,7 @@ var getScriptPromisify = (src) => {
               formatter: '{b}'
             },
             force: {
-              repulsion: 20000
+              repulsion: 10000
             },
             labelLayout: {
               hideOverlap: true
@@ -145,6 +145,12 @@ var getScriptPromisify = (src) => {
             lineStyle: {
               color: 'source',
               curveness: 0.3
+            },
+            emphasis: {
+              focus: 'adjacency',
+              lineStyle: {
+                width: 10
+              }
             }
           }
         ]
