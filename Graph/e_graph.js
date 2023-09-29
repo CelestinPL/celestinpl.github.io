@@ -55,7 +55,7 @@ var getScriptPromisify = (src) => {
       const [measure] = measures
       const nodes = []
       const links = []
-      const categories = []
+      var categories = []
 
       data.forEach(d => {
         const sourceLabel = d[source.key]['label']
