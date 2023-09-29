@@ -71,7 +71,7 @@ var getScriptPromisify = (src) => {
         if (nIndex === -1) { 
           nodes.push({ 
             name: targetLabel,
-            value: targetCategoryLabel
+            category: targetCategoryLabel
           }) 
         }
 
@@ -79,7 +79,7 @@ var getScriptPromisify = (src) => {
         if (pIndex === -1) { 
           nodes.push({ 
             name: sourceLabel,
-            value: sourceCategoryLabel
+            category: sourceCategoryLabel
           })
         }
         links.push({
