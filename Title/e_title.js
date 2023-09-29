@@ -31,10 +31,6 @@ var getScriptPromisify = (src) => {
     render (dataBinding) {
       this.dispose()
 
-      if (dataBinding.state !== 'success') { return }
-
-      let { data, metadata } = dataBinding
-
       this._echart = echarts.init(this._root)
       this._echart.setOption({
         graphic: {
