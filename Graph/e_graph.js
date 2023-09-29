@@ -85,7 +85,7 @@ var getScriptPromisify = (src) => {
         links.push({
           source: sourceLabel,
           target: targetLabel,
-          value: 100*(1 - raw)
+          value: raw
         })
         const cSIndex = categories.findIndex(object => object.name === sourceCategoryLabel)
         if (cSIndex === -1) { 
@@ -133,9 +133,7 @@ var getScriptPromisify = (src) => {
               formatter: '{b}'
             },
             force: {
-              repulsion: 20,
-              gravity: 0.2,
-              friction: 0.3
+              repulsion: 20000
             },
             labelLayout: {
               hideOverlap: true
