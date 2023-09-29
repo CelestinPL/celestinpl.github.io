@@ -50,7 +50,8 @@ var getScriptPromisify = (src) => {
 
       let { data, metadata } = dataBinding
       const { dimensions, measures } = this.parseMetadata(metadata)
-
+      console.log(dimensions);
+      console.log(measures);
       const [source, target, source_category, target_category] = dimensions
       const [measure] = measures
       const nodes = []
@@ -88,7 +89,9 @@ var getScriptPromisify = (src) => {
           value: raw
         })
       })
-      
+      console.log(nodes);
+      console.log(links);
+      console.log(categories);
       this._echart = echarts.init(this._root)
       this._echart.setOption({
         tooltip: {},
