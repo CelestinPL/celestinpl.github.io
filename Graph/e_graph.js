@@ -71,7 +71,6 @@ var getScriptPromisify = (src) => {
         if (nIndex === -1) { 
           nodes.push({ 
             name: targetLabel,
-            value: 5,
             category: targetCategoryLabel
           }) 
         }
@@ -80,14 +79,13 @@ var getScriptPromisify = (src) => {
         if (pIndex === -1) { 
           nodes.push({ 
             name: sourceLabel,
-            value: 5,
             category: sourceCategoryLabel
           })
         }
         links.push({
           source: sourceLabel,
           target: targetLabel,
-          filter: raw
+          value: 100*(1 - raw)
         })
         const cSIndex = categories.findIndex(object => object.name === sourceCategoryLabel)
         if (cSIndex === -1) { 
