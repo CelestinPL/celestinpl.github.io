@@ -1,0 +1,49 @@
+{
+  "id": "com.senfiniti.sac.echarts.title",
+  "version": "1.0.0",
+  "name": "EChartsTitleSenf",
+  "description": "A Title Chart Custom Widget Project",
+  "newInstancePrefix": "EChartsTitleSenf",
+  "vendor": "Senfiniti",
+  "eula": "",
+  "license": "",
+  "supportsMobile": true,
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-senfiniti-sac-echarts-title",
+      "url": "https://celestinpl.github.io/Title/e_title.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {
+    "width": {
+      "type": "integer",
+      "default": 1200
+    },
+    "height": {
+      "type": "integer",
+      "default": 800
+    }
+  },
+  "events": {},
+  "methods": {},
+  "types": {},
+  "dataBindings": {
+    "dataBinding": {
+      "feeds": [
+        {
+          "id": "dimensions",
+          "description": "Dimensions",
+          "type": "dimension"
+        },
+        {
+          "id": "measures",
+          "description": "Measures",
+          "type": "mainStructureMember"
+        }
+      ]
+    }
+  }
+}
