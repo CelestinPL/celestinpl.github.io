@@ -50,8 +50,7 @@ var getScriptPromisify = (src) => {
 
       let { data, metadata } = dataBinding
       const { dimensions, measures } = this.parseMetadata(metadata)
-      console.log(dimensions);
-      console.log(measures);
+
       const [source, target, source_category, target_category] = dimensions
       const [measure] = measures
       const nodes = []
@@ -88,10 +87,21 @@ var getScriptPromisify = (src) => {
           target: targetLabel,
           value: raw
         })
+        const cSIndex = categories.findIndex(object => object.name === sourceCategoryLabel)
+        if (cSIndex === -1) { 
+          categories.push({ 
+            name: sourceCategoryLabel
+          })
+        }
+
+        const cTIndex = categories.findIndex(object => object.name === targetCategoryLabel)
+        if (cTIndex === -1) { 
+          categories.push({ 
+            name: targetCategoryLabel
+          })
+        }
+
       })
-      console.log(nodes);
-      console.log(links);
-      console.log(categories);
       this._echart = echarts.init(this._root)
       this._echart.setOption({
         tooltip: {},
