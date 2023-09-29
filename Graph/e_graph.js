@@ -139,8 +139,8 @@ var getScriptPromisify = (src) => {
               hideOverlap: true
             },
             scaleLimit: {
-              min: 0.4,
-              max: 2
+              min: 0.1,
+              max: 10
             },
             lineStyle: {
               color: 'source',
@@ -148,8 +148,9 @@ var getScriptPromisify = (src) => {
             },
             emphasis: {
               focus: 'adjacency',
+              scale: 3,
               lineStyle: {
-                width: 10
+                width: 5
               }
             }
           }
