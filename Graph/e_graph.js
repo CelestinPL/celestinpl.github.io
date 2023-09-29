@@ -114,7 +114,7 @@ var getScriptPromisify = (src) => {
             },
             force: {
               repulsion: 100
-            }
+            },
             labelLayout: {
               hideOverlap: true
             },
