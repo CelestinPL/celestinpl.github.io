@@ -1,0 +1,49 @@
+{
+  "id": "com.senfiniti.sac.echarts.sankey",
+  "version": "1.0.0",
+  "name": "EChartsSankeySenf",
+  "description": "A Sankey Chart Custom Widget Project",
+  "newInstancePrefix": "EChartsSankeySenf",
+  "vendor": "Senfiniti",
+  "eula": "",
+  "license": "",
+  "supportsMobile": true,
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-senfiniti-sac-echarts-sankey",
+      "url": "https://celestinpl.github.io/Sankey/e_sankey.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {
+    "width": {
+      "type": "integer",
+      "default": 1200
+    },
+    "height": {
+      "type": "integer",
+      "default": 800
+    }
+  },
+  "events": {},
+  "methods": {},
+  "types": {},
+  "dataBindings": {
+    "dataBinding": {
+      "feeds": [
+        {
+          "id": "dimensions",
+          "description": "Dimensions",
+          "type": "dimension"
+        },
+        {
+          "id": "measures",
+          "description": "Measures",
+          "type": "mainStructureMember"
+        }
+      ]
+    }
+  }
+}
