@@ -102,6 +102,15 @@ var getScriptPromisify = (src) => {
         }
 
       })
+      
+      categories = categories.sort((a, b) => {
+        if (a.name < b.name) {
+          return -1;
+        }
+      });
+      console.log(nodes);
+      console.log(links);
+      console.log(categories);
       this._echart = echarts.init(this._root)
       this._echart.setOption({
         tooltip: {},
