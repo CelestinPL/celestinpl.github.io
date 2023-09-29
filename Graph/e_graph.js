@@ -116,7 +116,10 @@ var getScriptPromisify = (src) => {
           {
             data: categories.map(function (a) {
               return a.name;
-            })
+            }),
+            textStyle: {
+              color: 'inherit'
+            }
           }
         ],
         series: [
