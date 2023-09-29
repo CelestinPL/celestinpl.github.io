@@ -130,7 +130,9 @@ var getScriptPromisify = (src) => {
             label: {
               show: true,
               position: 'right',
-              formatter: '{b}'
+              formatter: '{b}',
+              color: 'inherit',
+              fontSize: 22
             },
             force: {
               repulsion: 10000
@@ -142,13 +144,14 @@ var getScriptPromisify = (src) => {
               min: 0.1,
               max: 10
             },
+            symbolSize: 20,
             lineStyle: {
               color: 'source',
               curveness: 0.3
             },
             emphasis: {
               focus: 'adjacency',
-              scale: 3,
+              scale: 2,
               lineStyle: {
                 width: 5
               }
