@@ -71,6 +71,7 @@ var getScriptPromisify = (src) => {
         if (nIndex === -1) { 
           nodes.push({ 
             name: targetLabel,
+            value: 5,
             category: targetCategoryLabel
           }) 
         }
@@ -79,13 +80,14 @@ var getScriptPromisify = (src) => {
         if (pIndex === -1) { 
           nodes.push({ 
             name: sourceLabel,
+            value: 5,
             category: sourceCategoryLabel
           })
         }
         links.push({
           source: sourceLabel,
           target: targetLabel,
-          value: raw
+          filter: raw
         })
         const cSIndex = categories.findIndex(object => object.name === sourceCategoryLabel)
         if (cSIndex === -1) { 
@@ -133,8 +135,8 @@ var getScriptPromisify = (src) => {
               formatter: '{b}'
             },
             force: {
-              repulsion: 1000,
-              gravity: 0.3,
+              repulsion: 20,
+              gravity: 0.2,
               friction: 0.3
             },
             labelLayout: {
