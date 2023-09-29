@@ -94,7 +94,7 @@ var getScriptPromisify = (src) => {
     }
   }
   
-  class GraphMain extends HTMLElement {
+  class TitleMain extends HTMLElement {
     constructor () {
       super();
 
