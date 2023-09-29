@@ -108,9 +108,7 @@ var getScriptPromisify = (src) => {
           return -1;
         }
       });
-      console.log(nodes);
-      console.log(links);
-      console.log(categories);
+
       this._echart = echarts.init(this._root)
       this._echart.setOption({
         tooltip: {},
@@ -135,7 +133,9 @@ var getScriptPromisify = (src) => {
               formatter: '{b}'
             },
             force: {
-              repulsion: 100
+              repulsion: 1000,
+              gravity: 0.3,
+              friction: 0.3
             },
             labelLayout: {
               hideOverlap: true
