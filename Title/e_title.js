@@ -47,12 +47,12 @@ var getScriptPromisify = (src) => {
                 lineDash: [0, 200],
                 lineDashOffset: 0,
                 fill: 'transparent',
-                stroke: '#FFC933',
+                stroke: '#C85611',
                 lineWidth: 1
               },
               keyframeAnimation: {
                 duration: 3000,
-                loop: true,
+                loop: false,
                 keyframes: [
                   {
                     percent: 0.7,
@@ -72,7 +72,7 @@ var getScriptPromisify = (src) => {
                   {
                     percent: 0.9,
                     style: {
-                      fill: '#FFC933'
+                      fill: '#C85611'
                     }
                   }
                 ]
