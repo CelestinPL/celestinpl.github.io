@@ -63,7 +63,7 @@ var getScriptPromisify = (src) => {
     }
   }
   
-  class TitleMain extends HTMLElement {
+  class EmptyMain extends HTMLElement {
     constructor () {
       super();
 
@@ -108,5 +108,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-senfiniti-sac-echarts-title', TitleMain);
+  customElements.define('com-senfiniti-sac-echarts-empty', EmptyMain);
 })();
