@@ -1,0 +1,49 @@
+{
+  "id": "com.senfiniti.sac.echarts.empty",
+  "version": "1.0.0",
+  "name": "EChartsEmptySenf",
+  "description": "A Empty Chart Custom Widget Project",
+  "newInstancePrefix": "EChartsEmptySenf",
+  "vendor": "Senfiniti",
+  "eula": "",
+  "license": "",
+  "supportsMobile": true,
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-senfiniti-sac-echarts-empty",
+      "url": "https://celestinpl.github.io/Empty/e_empty.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {
+    "width": {
+      "type": "integer",
+      "default": 1200
+    },
+    "height": {
+      "type": "integer",
+      "default": 800
+    }
+  },
+  "events": {},
+  "methods": {},
+  "types": {},
+  "dataBindings": {
+    "dataBinding": {
+      "feeds": [
+        {
+          "id": "dimensions",
+          "description": "Dimensions",
+          "type": "dimension"
+        },
+        {
+          "id": "measures",
+          "description": "Measures",
+          "type": "mainStructureMember"
+        }
+      ]
+    }
+  }
+}
