@@ -52,7 +52,7 @@ var getScriptPromisify = (src) => {
       const { dimensions, measures } = this.parseMetadata(metadata)
 
       const [source, target] = dimensions
-      const [measure] = measures
+      const [measure, prevmeasure] = measures
       const nodes = []
       const links = []
 
@@ -61,20 +61,40 @@ var getScriptPromisify = (src) => {
         const parentId = d[source.key]['id']
         const { label, id } = d[target.key]
         const { raw } = d[measure.key]
+        let prevraw = 0;
+        if (prevmeasure != undefined){
+          prevraw = d[prevmeasure.key]['raw'];
+        }          
         const nIndex = nodes.findIndex(object => object.name === label)
         if (nIndex === -1) { 
-          nodes.push({ name: label }) 
+          nodes.push({ name: label, param1: prevraw, param2: 0 }) 
+        }
+        else {
+          nodes[nIndex]['param1'] += prevraw;
         }
 
         const pIndex = nodes.findIndex(object => object.name === parentLabel)
         if (pIndex === -1) { 
-          nodes.push({ name: parentLabel }) 
+          nodes.push({ name: parentLabel, param1: 0, param2: prevraw }) 
+        }
+        else {
+          nodes[pIndex]['param2'] += prevraw;
         }
         links.push({
           source: parentLabel,
           target: label,
           value: raw
         })
+      })
+
+      nodes.forEach(n => {
+        if (n.param1 >= n.param2){
+          delete n.param2;
+        }
+        else {
+          n.param1 = n.param2;
+          delete n.param2;
+        }
       })
       
       this._echart = echarts.init(this._root)
@@ -97,6 +117,64 @@ var getScriptPromisify = (src) => {
             lineStyle: {
               color: 'gradient',
               curveness: 0.5
+            },
+            edgeLabel: {
+              show: false
+            },
+            label: {
+              show: true,
+              formatter: function(d) {
+                let p = 0, v = d.value, m='';
+                if (d.data.hasOwnProperty("param1") && typeof(d.data.param1) == 'number')
+                {
+                  if (d.data.param1 != 0)
+                  {
+                    p = ((d.value - d.data.param1) * 100 / d.data.param1).toFixed(2);
+                  }
+                }
+                if (v > 1000000000)
+                {
+                  v = (v / 1000000000).toFixed(2);
+                  m = ' B'
+                } 
+                else if (v > 1000000)
+                {
+                  v = (v / 1000000).toFixed(2);
+                  m = ' M'
+                }
+                else if (v > 1000)
+                {
+                  v = (v / 1000).toFixed(2);
+                  m = ' K'
+                }
+                else
+                {
+                  v = v.toFixed(2);
+                }
+                return "{i|" + d.name + ": }"
+                  + "{b|" + v + m + "}"
+                  + (p > 0 ? "{g|   +" + p + "%}" : "")
+                  + (p < 0 ? "{r|   " + p + "%}" : "");
+              },
+                  
+              rich: {
+                i: {
+                    color: 'inherit',
+                    fontWeight: 'bold'
+                },
+                r: {
+                    color: 'red',
+                    fontWeight: 'bold'
+                },
+                g: {
+                    color: 'green',
+                    fontWeight: 'bold'
+                },
+                b: {
+                    color: 'blue',
+                    fontWeight: 'bold'
+                }
+              }
             }
           }
         ]
