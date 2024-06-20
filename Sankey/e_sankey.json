@@ -1,6 +1,6 @@
 {
   "id": "com.senfiniti.sac.echarts.sankey",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "EChartsSankeySenf",
   "description": "A Sankey Chart Custom Widget Project",
   "newInstancePrefix": "EChartsSankeySenf",
@@ -13,8 +13,8 @@
       "kind": "main",
       "tag": "com-senfiniti-sac-echarts-sankey",
       "url": "https://celestinpl.github.io/Sankey/e_sankey.js",
-      "integrity": "",
-      "ignoreIntegrity": true
+      "integrity": "sha384-gZ/sB2bBWmEDPsOlevmxuvezN9zO6UjDsaPAwGgaTgsL69+Pn3DxsvVaIYt/QMoG",
+      "ignoreIntegrity": false
     }
   ],
   "properties": {
