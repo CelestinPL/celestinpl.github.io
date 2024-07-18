@@ -5,8 +5,8 @@
   "description": "A Sankey Chart Custom Widget Project",
   "newInstancePrefix": "EChartsSankeySenf",
   "vendor": "Senfiniti",
-  "eula": "",
-  "license": "",
+  "eula": "Proprietary License © Senfiniti Sp. z o.o. Sp. k. 2024 Wszystkie prawa zastrzeżone. Oprogramowanie jest dostarczane do użycia komercyjnego przez licencjobiorcę (dalej "Użytkownik") zgodnie z następującymi warunkami: 1. Użytkownik może używać Oprogramowania do celów komercyjnych. 2. Użytkownik nie może przekazywać Oprogramowania osobom trzecim bez uprzedniej pisemnej zgody Senfiniti Sp. z o.o. Sp. k. 3. Użytkownik musi zachować wszystkie informacje o prawach autorskich i zawiadomienia zawarte w Oprogramowaniu. 4. Oprogramowanie jest dostarczane "tak jak jest", bez jakiejkolwiek gwarancji, wyraźnej lub dorozumianej. Kontakt pod adresem kontakt@senfiniti.com.",
+  "license": "Proprietary License",
   "supportsMobile": true,
   "webcomponents": [
     {
