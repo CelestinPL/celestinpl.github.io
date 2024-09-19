@@ -1,0 +1,49 @@
+{
+  "id": "com.senfiniti.sac.echarts.gauge",
+  "version": "1.0.0",
+  "name": "EChartsGaugeSenf",
+  "description": "A Gauge Chart Custom Widget Project",
+  "newInstancePrefix": "EChartsGaugeSenf",
+  "vendor": "Senfiniti",
+  "eula": "",
+  "license": "",
+  "supportsMobile": true,
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-senfiniti-sac-echarts-gauge",
+      "url": "https://celestinpl.github.io/Gauge/e_gauge.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {
+    "width": {
+      "type": "integer",
+      "default": 360
+    },
+    "height": {
+      "type": "integer",
+      "default": 240
+    }
+  },
+  "events": {},
+  "methods": {},
+  "types": {},
+  "dataBindings": {
+    "dataBinding": {
+      "feeds": [
+        {
+          "id": "dimensions",
+          "description": "Dimensions",
+          "type": "dimension"
+        },
+        {
+          "id": "measures",
+          "description": "Measures",
+          "type": "mainStructureMember"
+        }
+      ]
+    }
+  }
+}
