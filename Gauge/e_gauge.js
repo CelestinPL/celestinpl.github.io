@@ -94,7 +94,7 @@ var getScriptPromisify = (src) => {
               axisLabel: {
                 color: 'inherit',
                 distance: 40,
-                fontSize: 20
+                fontSize: 10
               },
               detail: {
                 valueAnimation: true,
