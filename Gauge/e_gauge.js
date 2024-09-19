@@ -59,7 +59,7 @@ var getScriptPromisify = (src) => {
             {
               type: 'gauge',
               min: 0,
-              max: 60000,
+              max: 3000,
               axisLine: {
                 lineStyle: {
                   width: 30,
