@@ -59,14 +59,14 @@ var getScriptPromisify = (src) => {
             {
               type: 'gauge',
               min: 0,
-              max: 300,
+              max: 100,
               axisLine: {
                 lineStyle: {
                   width: 30,
                   color: [
-                    [0.233, '#EC7063'],
-                    [0.3, '#5DADE2'],
-                    [0.333, '#58D68D']
+                    [0.7, '#EC7063'],
+                    [0.9, '#5DADE2'],
+                    [1, '#58D68D']
                   ]
                 }
               },
