@@ -59,7 +59,7 @@ var getScriptPromisify = (src) => {
             {
               type: 'gauge',
               min: 0,
-              max: 3,
+              max: 300,
               axisLine: {
                 lineStyle: {
                   width: 30,
@@ -102,7 +102,7 @@ var getScriptPromisify = (src) => {
               },
               data: [
                 {
-                  value: +(data[0][measure.key]['raw']).toFixed(2)
+                  value: +(data[0][measure.key]['raw'] * 100).toFixed(2)
                 }
               ]
             }
